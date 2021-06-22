@@ -1,50 +1,78 @@
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
     <script>
-        document.writeln("<h1>hola la mundo desde java scrpit<h1>");
+        var fecha = new Date();
+        var mensaje = new String();
+        var horas = fecha.getHours();
+        
+        if(horas >= 00 && horas < 12){
+            mensaje = "Buenos días";
+        } else if(horas >= 12 && horas < 18){
+            mensaje = "Buenas tardes";
+        } else if(horas >= 18 && horas <= 23){
+            mensaje = "Buenas noches";
+        }
+
+        alert(mensaje+". Ingresa los datos solicitados");
+        var nombre = "";
+        var edad = 0;
+        var localidad = "";
+        var profesion = "";
+
+        nombre = prompt("¿Cuál es tu nombre?");
+        edad = prompt("¿Cuál es tu edad?");
+        localidad = prompt("¿Cuál es tu localidad?");
+        profesion = prompt("¿Cuál es tu profesión?");
+
+        var respuesta = confirm("¿Los datos son correctos?" +
+            "\nNombre: " + nombre +
+            "\nEdad: " + edad +
+            "\nLocalidad: " + localidad +
+            "\nProfesion: " + profesion);
+        if (respuesta) {
             document.writeln("<center>");
-        document.writeln("<table border='1'>");
+            document.writeln("<table border = '1'>");
+            //Renglón 1
             document.writeln("<tr>");
-                document.writeln("<td rowspan='4' >");
-                    document.writeln("Foto");   
-                document.writeln("</td>");
-
-                document.writeln("<td>");
-                    document.writeln("<b>Nombre: </b> jose Narvaez");
-                document.writeln("</td>");
-          document.writeln("</tr>");
-
-          document.writeln("<tr>");
+            //Col 1
+            document.writeln("<td rowspan='4' width = '25%'>Foto");
+            document.writeln("</td>")
+            //Col 2
             document.writeln("<td>");
-                    document.writeln("<b>Edad: </b> 29");
-                document.writeln("</td>");
-             document.writeln("</tr>");
-
-          document.writeln("<tr>");
+            document.writeln("<b>Nombre: </b>"+nombre);
+            document.writeln("</td>")
+            document.writeln("</tr>");
+            //Renglón 2
+            document.writeln("<tr>");
             document.writeln("<td>");
-                    document.writeln("<b>Localidad: </b> Emiliano Zapata");
-                document.writeln("</td>");
-          document.writeln("</tr>");
-
-          document.writeln("<tr>");
+            document.writeln("<b>Edad: </b>"+edad+" años");
+            document.writeln("</td>")
+            document.writeln("</tr>");
+            //Renglón 3
+            document.writeln("<tr>");
             document.writeln("<td>");
-                    document.writeln("<b>Profesión: </b> Docente");
-                document.writeln("</td>");
-          document.writeln("</tr>");
+            document.writeln("<b>Localidad: </b>"+localidad);
+            document.writeln("</td>")
+            document.writeln("</tr>");
+            //Renglón 4
+            document.writeln("<tr>");
+            document.writeln("<td>");
+            document.writeln("<b>Profesión: </b>"+profesion);
+            document.writeln("</td>")
+            document.writeln("</tr>");
+            document.writeln("</table>")
+            document.writeln("</center>");
+        } else {
+            alert("Gracias por visitarnos. Vuelve pronto.");
+        }
 
 
-
-
-         document.writeln("</table>");
-         document.writeln("</center>");
-                   
     </script>
 </head>
+
 <body>
-    
-</body>
-</html>
